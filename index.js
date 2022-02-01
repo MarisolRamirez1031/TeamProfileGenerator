@@ -54,7 +54,7 @@ const managerEntry = () => {
         },
         {
             type: 'input',
-            name: 'office',
+            name: 'officeNumber',
             message: 'Please enter your work Office Number',
             validate: officeLocation => {
                 if(officeLocation) {
@@ -70,6 +70,7 @@ const managerEntry = () => {
             managerInput.name,
             managerInput.id,
             managerInput.email,
+            managerInput.officeNumber,
             managerInput.position)
 
             employeeArray.push(manager);
@@ -212,7 +213,8 @@ const employeeIntern = () => {
             internDetail.name,
             internDetail.id,
             internDetail.email,
-            internDetail.school)
+            internDetail.school,
+            internDetail.position)
 
             employeeArray.push(intern);
 
@@ -222,8 +224,9 @@ const employeeIntern = () => {
 
 // writeToFile();
  function writeToFile() {
-     var joinHtml = path.join(__dirname, 'dist/index.html');
-     fs.writeFileSync(joinHtml, htmlHelper(employeeArray), 'utf-8')
+     var joinHtml = path.join(__dirname, '/dist', 'index.html');
+     fs.writeFileSync(joinHtml, htmlHelper(employeeArray), 'utf-8');
+     console.log(employeeArray)
  }
 
 function init(){
