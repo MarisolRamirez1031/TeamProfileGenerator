@@ -74,8 +74,29 @@ const managerEntry = () => {
 }
 
 const newEmployee = () => {
-    
+    inquirer.prompt([
+        {
+            type: 'checkbox',
+            name: 'position',
+            message: 'Choose the position of yout Employee',
+            choices: [ 'Engineer', 'Intern', 'None']
+        }
+    ]).then(employeeDetail => {
+        if(employeeDetail.position === 'Engineer'){
+            promptEngineer();
+        } else if (employeeDetail.position === 'Intern'){
+            promptIntern();
+        } else if (employeeDetail.position === 'None'){
+            writeToFile();
+        }
+    })
 }
+
+// promptEngineer();
+
+// promptIntern();
+
+// writeToFile();
 
 
 function init(){
