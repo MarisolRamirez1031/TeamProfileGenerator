@@ -12,7 +12,7 @@ test('create an employee object and show name id email and position', () => {
 test('getName', () => {
     const employeeInfo = new Employee('Mari');
     expect(employeeInfo.getName()).toBe('Mari');
-})
+});
 
 test('getId', () => {
     const employeeInfo = new Employee('Mari', 960421, 'employeeemail@here.com');
